@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import "../App.css"
-const Folder = ({explorer}) => {
+const Folder = ({handletreeinsert,explorer}) => {
     console.log(explorer.items);
 
     const [visible,setvisible]=useState(false);
@@ -9,12 +9,14 @@ const Folder = ({explorer}) => {
       visible:false
     })
     const handlenewadd=(e)=>{
-      if(e.keyCode===13 && e.target.value)
-      //add
-      setvinput({...vinput,visible:false})
+      if(e.keyCode===13 && e.target.value){
+        //addhandletreeinsert
+        handletreeinsert(explorer.id,e.target.value,vinput.isFolder)
+        setvinput({...vinput,visible:false})
+      }
     }
 const handlenewFolder=(e,isFolder)=>{
-  e.stopPropagation();
+  // e.stopPropagation();
 setvinput({isFolder,visible:true})
 }
     if(explorer.isFolder){
@@ -45,7 +47,7 @@ setvinput({isFolder,visible:true})
         )
         }
       {visible && explorer.items.map((item)=>{
-        return  <Folder explorer={item}/>
+        return  <Folder handletreeinsert={handletreeinsert} explorer={item}/>
       })}
       </div>
     </div>
