@@ -1,0 +1,12 @@
+.subfolder{
+    display: block;
+    margin-left: 4px;
+    cursor: pointer;
+}
+.folder{
+    cursor: pointer;
+    background-color: whitesmoke;
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+}
