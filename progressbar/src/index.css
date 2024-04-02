@@ -1,0 +1,29 @@
+.app{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.progressbar{
+  height: 20px;
+  width: 500px;
+  background-color: lightgray;
+  border: 1px solid black;
+  border-radius: 15px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  overflow: hidden;
+}
+.progressbar div{
+  height: 100%;
+  width: 100%;
+  background-color: green;
+}
+.progressbar span{
+  position: absolute;
+  width: 40%;
+  display: flex;
+  justify-content: center; 
+ }
+
